@@ -1,28 +1,80 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Quiz</title>
-	<link rel="stylesheet" href="quiz.css">
-	<script src="quiz.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Code Quiz</title>
 </head>
+
 <body>
-	<h1>Quiz</h1>
-	<div id="question-container">
-		<h2 id="question"></h2>
-		<div id="answer-buttons" class="btn-grid">
-			<button class="btn"></button>
-			<button class="btn"></button>
-			<button class="btn"></button>
-			<button class="btn"></button>
-		</div>
-	</div>
-	<div id="controls">
-		<button id="start-btn" class="btn">Start</button>
-		<button id="next-btn" class="btn">Next</button>
-	</div>
-	<div id="score-container">
-		<h2 id="score"></h2>
-	</div>
+    <header>
+    <section id = "score_keeper" style="display: none">
+        <input type="button" value="View High Scores" onclick="view_high_scores()"></br>
+        Score: <var id="score"> </var>
+    </section>
+
+    <section id= "countdownTimer" style="display: none">
+        Time Remaining: <span id="timer"></span>
+    </section>
+
+    </header>
+
+        
+    <div id="homeContainer" class="none">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time linit</p> 
+        <p> Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+        <p><strong>Ready to test your coding knowledge? Let's get started!</strong></p>
+        <br>
+        <button id="startBtn">Start Quiz</button>
+    </div>
+</header>
+
+        <!-- QUIZ CONTAINER -->
+        <div id="quizContainer" style="display: none"> 
+            <h2 id="questionHeading"></h2>
+            <!-- <div id="answerChoices"> -->
+                <ul>
+                    <div id="choices">
+                        <button id="answerChoiceA"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceB"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceC"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceD"></button>
+                    </div>
+                </ul>
+            </div>
 </body>
-</html>
+<section id="AnswerResponse">
+</section>
+
+<div id= "game_over" style="display: none">
+    <h2> All Done!</h2>
+    Your Final Score Is: 
+    <var id="end_score"> </var>
+    </br>
+    Initials: <input type="text"  value="initials" id="initials">
+    </br>
+    <input type="button" value="submit" id="submit_intials" onclick="submit_score()">
+</div>
+
+<div id="high_scores_page" style="display: none" >
+    <h2> High Scores </h2>
+    <div id="high_scores"></div>
+        <input type="button" value="Go Back" id="go_back" onclick="go_home()">
+        <input type="button" id="Clear Highscores" value ="clear" onclick="clear_hs()">
+    </div>
+
+    <script src="script.js"></script>
+
+</html> 
